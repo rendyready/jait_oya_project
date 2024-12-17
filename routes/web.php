@@ -19,9 +19,12 @@ Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth']);
 
 //Slider
-// Route::get('/slider', [SliderController::class, 'index'])->middleware(['auth']);
 Route::group(['prefix' => 'slider', 'controller' => SliderController::class, 'middleware' => ['auth']], function () {
     Route::get('/', 'index')->name('slider.index');
     Route::get('/create', 'create')->name('slider.create');
-    // Route::get('m_bb/del', 'm_bb_del')->name('m_bb.del');
+    Route::post('/insert', 'insert')->name('slider.insert');
+    Route::get('/show', 'show')->name('slider.show');
+    Route::get('/show_detail/{id}', 'show_detail')->name('slider.show_detail');
+    Route::post('/edit', 'edit')->name('slider.edit');
+    Route::post('/delete/{id}', 'delete')->name('slider.delete');
 });

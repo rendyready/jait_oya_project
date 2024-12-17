@@ -4,10 +4,10 @@
     <!-- start header -->
     @include('frontend_layouts.nav')
     <!-- end header -->
-    <section id="intro">
+    <section id="intro" style="background: url('{{ asset('storage/' . $data->background->slider_image) }}')center;">
         <div class="intro-content">
-            <h2>Selamat Datang !</h2>
-            <h3>Masalah pakaianmu adalah masalah kami, segera selesaikan !</h3>
+            <h2>{{ $data->background->slider_title }}</h2>
+            <h3>{{ $data->background->slider_description }}</h3>
             <div>
                 <a href="#content" class="btn-get-started scrollto">Let's Go</a>
             </div>

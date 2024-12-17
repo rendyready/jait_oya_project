@@ -317,7 +317,6 @@ ul.nav li.dropdown ul li i {
   width: 100%;
   height: 60vh;
   position: relative;
-	background: url(../img/intro-background.jpg) top center;
   background-size: cover;
 }
 
@@ -2802,7 +2801,5 @@ ul.the-icons {
 	text-align: center;
 	outline:0;
 }
-
-
 
 /* Theme Styler :: End */

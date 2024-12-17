@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $menus = [
+        $data = new \stdClass();
+        $data->menus = [
             ['title' => 'Home', 'url' => route('frontend.index')],
         ];
+
+        $data->background = DB::table('slider')->where('slider_status', 1)->first();
     
-        return view('frontend/index', compact('menus'));
+        return view('frontend/index', compact('data'));
     }
 
     public function about()

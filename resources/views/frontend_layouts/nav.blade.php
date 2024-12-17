@@ -72,7 +72,7 @@
 <div id="wrapper">
     <header>
         <div class="top">
-            <div class="container">
+            {{-- <div class="container">
                 <div class="row">
                     <div class="span6">
                         <ul class="topmenu">
@@ -87,7 +87,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <div class="container">
             <div class="row nomargin">
