@@ -153,7 +153,7 @@
         </div>
     </section>
 
-    <section id="works">
+    {{-- <section id="works">
         <div class="container">
             <div class="row">
                 <div class="span12">
@@ -235,7 +235,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     @include('frontend_layouts.footer')
 </div>

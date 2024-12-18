@@ -37,12 +37,16 @@ class HomeController extends Controller
         return view('frontend/contact', compact('menus'));
     }
 
-    public function produk()
+    public function layanan()
     {
-        $menus = [
-            ['title' => 'Produk', 'url' => route('frontend.produk')],
+        $data = new \stdClass();
+        $data->menus = [
+            ['title' => 'Produk', 'url' => route('frontend.layanan')],
         ];
+
+        $data->banner = DB::table('produk')->where('produk_information', 1)->first();
     
-        return view('frontend/produk', compact('menus'));
+        return view('frontend/layanan', compact('data'));
     }
+
 }

@@ -109,8 +109,8 @@
                                     <li class="{{ Request::routeIs('frontend.index') ? 'active' : '' }}">
                                         <a href="{{ route('frontend.index') }}">Home</a>
                                     </li>
-                                    <li class="{{ Request::routeIs('frontend.produk') ? 'active' : '' }}">
-                                        <a href="{{ route('frontend.produk') }}">Produk</a>
+                                    <li class="{{ Request::routeIs('frontend.layanan') ? 'active' : '' }}">
+                                        <a href="{{ route('frontend.layanan') }}">Produk</a>
                                     </li>
                                     <li class="{{ Request::routeIs('frontend.about') ? 'active' : '' }}">
                                         <a href="{{ route('frontend.about') }}">Tentang</a>
