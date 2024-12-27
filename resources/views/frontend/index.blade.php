@@ -103,7 +103,8 @@
                                     </ul>
                                 </div>
                                 <div class="action">
-                                    <a href="#" class="btn btn-primary">Cek Disini</a>
+                                    <a href="{{ route('frontend.layanan') }}" class="btn btn-primary">Cek
+                                        Disini</a>
                                 </div>
                             </div>
                         </div>
@@ -122,7 +123,7 @@
                                     </ul>
                                 </div>
                                 <div class="action">
-                                    <a href="#" class="btn btn-primary">Cek Disini</a>
+                                    <a href="{{ route('frontend.layanan') }}" class="btn btn-primary">Cek Disini</a>
                                 </div>
                             </div>
                         </div>
@@ -239,3 +240,21 @@
 
     @include('frontend_layouts.footer')
 </div>
+{{-- 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    });
+</script> --}}

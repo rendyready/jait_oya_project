@@ -1,6 +1,4 @@
 @include('frontend_layouts.header')
-{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> --}}
-
 
 <style>
     /* Layout utama */
@@ -88,20 +86,9 @@
                             <!-- Bagian Portfolio (kiri) -->
                             <ul class="grid cs-style-3">
                                 <li class="span7">
-                                    <figure>
-                                        {{-- style="background: url('{{ asset('storage/' . $data->background->slider_image) }}')center;" --}}
-                                        <div><img src="{{ asset('storage/' . $data->banner->produk_image) }}"
-                                                alt=""
-                                                style="width: 100%; height: 60vh;  position: relative; backgound: center;">
-                                        </div>
-                                        <figcaption>
-                                            <h3>Layanan Jait Oya</h3>
-                                            {{-- <ul class="layanan-list">
-                                                <li>Permak</li>
-                                                <li>Jahit</li>
-                                            </ul> --}}
-                                        </figcaption>
-                                    </figure>
+                                    <div><img src="{{ asset('storage/' . $data->banner->produk_image) }}" alt=""
+                                            style="width: 100%; height: 60vh;  position: relative; backgound: center;">
+                                    </div>
                                 </li>
                             </ul>
 
@@ -136,20 +123,9 @@
                                                         alt=""></div>
                                                 <figcaption>
                                                     <h3>{{ $vermak->produk_title }}</h3>
-                                                    <p>
-                                                        {{-- <a href="{{ asset('storage/' . $vermak->produk_image) }}"
-                                                            data-pretty="prettyPhoto[gallery1]" title="Detail Foto"><i
-                                                                class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i>
-                                                            </a> --}}
-                                                        <!-- Tautan -->
-                                                        <a href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#imageModal"
-                                                            onclick="openModal('{{ asset('storage/' . $vermak->produk_image) }}', '{{ $vermak->produk_title }}')">
-                                                            <i
-                                                                class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i>
-                                                        </a>
-                                                        <a href="#"><i
-                                                                class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
+                                                    <p
+                                                        style="color: rgb(255, 255, 255); margin-left: 20px; margin-right: 20px;">
+                                                        {{ $vermak->produk_description }}
                                                     </p>
                                                 </figcaption>
                                             </figure>
@@ -167,14 +143,9 @@
                                                         alt=""></div>
                                                 <figcaption>
                                                     <h3>{{ $jahit->produk_title }}</h3>
-                                                    <p>
-                                                        <a href="{{ asset('storage/' . $jahit->produk_image) }}"
-                                                            data-pretty="prettyPhoto[gallery1]" title="Detail Foto"><i
-                                                                class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i>
-                                                        </a>
-                                                        <a href="#"><i
-                                                                class="icon-file icon-circled icon-bglight icon-2x active"></i>
-                                                        </a>
+                                                    <p
+                                                        style="color: rgb(255, 255, 255); margin-left: 20px; margin-right: 20px;">
+                                                        {{ $jahit->produk_description }}
                                                     </p>
                                                 </figcaption>
                                             </figure>

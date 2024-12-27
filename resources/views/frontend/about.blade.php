@@ -5,20 +5,13 @@
       @include('frontend_layouts.nav')
       <!-- end header -->
 
-      <section id="inner-headline">
+      <section id="inner-headline" style="background-color: rgba(160, 173, 201, 0.671)">
           <div class="container">
               <div class="row">
-                  <div class="span4">
+                  <div class="span12">
                       <div class="inner-heading">
-                          <h2>About us</h2>
+                          <h2 class="text-center" style="color: rgb(202, 29, 29)">Tentang</h2>
                       </div>
-                  </div>
-                  <div class="span8">
-                      <ul class="breadcrumb">
-                          <li><a href="index.html">Home</a> <i class="icon-angle-right"></i></li>
-                          <li><a href="#">Pages</a> <i class="icon-angle-right"></i></li>
-                          <li class="active">About us</li>
-                      </ul>
                   </div>
               </div>
           </div>
@@ -29,24 +22,39 @@
               <div class="row">
 
                   <div class="span6">
-                      <h4>About Remember Inc</h4>
+                      <h4>
+                          Tentang
+                          <span style="color: firebrick;">Jahit Oya</span>
+                      </h4>
                       <p>
-                          Ei mel semper vocent persequeris, nominavi patrioque vituperata id vim, cu eam gloriatur
-                          philosophia deterruisset. Meliore perfecto repudiare ea nam, ne mea duis temporibus. Id quo
-                          accusam consequuntur, eum ea debitis urbanitas. Nibh reformidans vim ne.
+                          <strong>Jahit Oya</strong> adalah usaha yang berdiri sejak tahun 2022, berfokus pada layanan
+                          jahit dan permak pakaian dengan kualitas tinggi dan pelayanan yang ramah. Kami melayani
+                          berbagai kebutuhan jahit dan permak untuk segala jenis pakaian, termasuk:
                       </p>
                       <p>
-                          Iudico definiebas eos ea, dicat inermis hendrerit vel ei, legimus copiosae quo at. Per utinam
-                          corrumpit prodesset te, liber praesent eos an. An prodesset neglegentur qui, usu ancillae
-                          posidonium in, mea ex eros animal scribentur. Et simul fabellas sit.
-                          Populo inimicus ne est.
+                      <ul>
+                          <li><strong>Pakaian Formal:</strong> Jas, blazer, celana bahan, dan rok formal.</li>
+                          <li><strong>Pakaian Kasual:</strong> Kaos, celana jeans, kemeja, dan blus.</li>
+                          <li><strong>Pakaian Anak-Anak:</strong> Seragam sekolah, baju pesta, hingga pakaian
+                              sehari-hari.</li>
+                          <li><strong>Pakaian Tradisional:</strong> Kebaya, baju adat, dan batik.</li>
+                          <li><strong>Pakaian Khusus:</strong> Gaun pesta, pakaian olahraga, hingga pakaian seragam
+                              kerja.</li>
+                      </ul>
                       </p>
-
+                      <p>
+                          Dengan pengalaman dan dedikasi kami, Jahit Oya hadir untuk memberikan solusi terbaik bagi
+                          kebutuhan jahit dan permak Anda, mulai dari memperbaiki pakaian agar lebih pas hingga menjahit
+                          pakaian baru sesuai desain pilihan Anda. Kami siap menjadi mitra terpercaya dalam memenuhi
+                          kebutuhan pakaian Anda.
+                      </p>
                   </div>
 
+
                   <div class="span6">
-                      <iframe src="http://player.vimeo.com/video/24535181?title=0&amp;byline=0" width="500"
-                          height="281" seamless></iframe>
+                      <div>
+                          <img src="{{ asset('storage/images/about_us.jpg') }}" alt="">
+                      </div>
                   </div>
               </div>
 
@@ -58,7 +66,7 @@
               </div>
               <!-- end divider -->
 
-              <div class="row team">
+              {{-- <div class="row team">
                   <div class="span12">
                       <h4>Nice persons behind Remember</h4>
                   </div>
@@ -128,7 +136,7 @@
                           </div>
                       </div>
                   </div>
-              </div>
+              </div> --}}
 
           </div>
       </section>

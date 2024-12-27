@@ -89,17 +89,17 @@
 
                         <label>Title Produk</label>
                         <input type="text" class="form-control form-control-sm" id="modal_title"
-                            name="modal_keterangan">
+                            name="modal_keterangan" required>
 
                         <label class="mt-2">Deskripsi Produk</label>
-                        <textarea class="form-control form-control-sm" id="modal_deskripsi" name="produk_deskripsi"></textarea>
+                        <textarea class="form-control form-control-sm" id="modal_deskripsi" name="produk_deskripsi" required></textarea>
 
                         <div class="d-flex align-items-center mt-2">
-                            <label class="mb-0 me-2">Status : </label>&nbsp;&nbsp;
+                            <label class="mb-0 me-2">Kategori : </label>&nbsp;&nbsp;
                             <input type="radio" class="status_produk" name="status_produk" value="1">&nbsp;&nbsp;
-                            <span class="mb-0">Aktif</span>&nbsp;&nbsp;&nbsp;
-                            <input type="radio" class="status_produk" name="status_produk" value="0">&nbsp;&nbsp;
-                            <span class="mb-0">Non Aktif</span>
+                            <span class="mb-0">Vermak</span>&nbsp;&nbsp;&nbsp;
+                            <input type="radio" class="status_produk" name="status_produk" value="2">&nbsp;&nbsp;
+                            <span class="mb-0">Jahit</span>
                         </div>
                         <div class="form-group mt-3">
                             <input type="checkbox" id="is_product_info" name="produk_info" value="1">
@@ -274,6 +274,15 @@
 
             $("#add_produk").on('click', function() {
                 $("#add_modal").modal('show');
+            });
+
+            $("#is_product_info").on("change", function() {
+                if ($(this).is(":checked")) {
+                    $(".status_produk").prop("disabled", true);
+                    $(".status_produk").prop("checked", false);
+                } else {
+                    $(".status_produk").prop("disabled", false);
+                }
             });
 
             $('#formAction').submit(function(e) {

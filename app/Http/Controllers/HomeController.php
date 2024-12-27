@@ -21,11 +21,13 @@ class HomeController extends Controller
 
     public function about()
     {
-        $menus = [
+        $data = new \stdClass();
+        $data->menus = [
             ['title' => 'Tentang', 'url' => route('frontend.about')],
         ];
-    
-        return view('frontend/about', compact('menus'));
+        // $data->about = DB::table('produk')->where('produk_information', 1)->where('produk_status', 1)->first();
+
+        return view('frontend/about', compact('data'));
     }
 
     public function contact()

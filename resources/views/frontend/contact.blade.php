@@ -10,14 +10,8 @@
             <div class="row">
                 <div class="span4">
                     <div class="inner-heading">
-                        <h2>Get in touch</h2>
+                        <h2>Hubungi Kami</h2>
                     </div>
-                </div>
-                <div class="span8">
-                    <ul class="breadcrumb">
-                        <li><a href="index.html">Home</a> <i class="icon-angle-right"></i></li>
-                        <li class="active">Contact</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -25,12 +19,14 @@
 
     <section id="content">
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452"
-            width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.883371175415!2d110.1220921!3d-7.8955627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7ae3a91f5817ef%3A0x620777095a2434e2!2sPermak%20%26%20Jahit%20Pakaian%20-%20Jait%20Oya!5e0!3m2!1sen!2sid!4v1696808806294!5m2!1sen!2sid"
+            width="100%" height="380" class="mb-5" frameborder="0" style="border:0; margin-bottom: 3rem;"
+            allowfullscreen>
+        </iframe>
         <div class="container">
-            <div class="row">
+            <div class="row mt-4">
                 <div class="span8">
-                    <h4>Get in touch with us by filling contact form below</h4>
+                    <h4>Hubungi Kami Sekarang</h4>
 
 
 
@@ -41,30 +37,28 @@
 
                         <div class="row">
                             <div class="span4 field form-group">
-                                <input type="text" name="name" placeholder="* Enter your full name"
-                                    data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <input type="text" name="name" placeholder="* Masukkan Namamu"
+                                    data-rule="minlen:4" data-msg="Masukan paling sedikit 4 huruf" required />
                                 <div class="validation"></div>
                             </div>
                             <div class="span4 field form-group">
-                                <input type="text" name="email" placeholder="* Enter your email address"
-                                    data-rule="email" data-msg="Please enter a valid email" />
+                                <input type="text" name="email" placeholder="* Masukkan emailmu" data-rule="email"
+                                    data-msg="Masukan format email yang valid" />
                                 <div class="validation"></div>
                             </div>
                             <div class="span8 margintop10 field form-group">
-                                <input type="text" name="subject" placeholder="Enter your subject"
-                                    data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <input type="text" name="subject" placeholder="Ada masalah apa?" data-rule="minlen:4"
+                                    data-msg="Masukan paling sedikit 4 huruf" />
                                 <div class="validation"></div>
                             </div>
                             <div class="span8 margintop10 field form-group">
-                                <textarea rows="12" name="message" class="input-block-level" placeholder="* Your message here..."
-                                    data-rule="required" data-msg="Please write something"></textarea>
+                                <textarea rows="12" name="message" class="input-block-level" placeholder="* Input pesan anda disini..."
+                                    data-rule="required" data-msg="Tulis sesuatu"></textarea>
                                 <div class="validation"></div>
 
                                 <p>
-                                    <button class="btn btn-color margintop10 pull-left" type="submit">Send
-                                        message</button>
-                                    <span class="pull-right margintop20">* Please fill all required form field,
-                                        thanks!</span>
+                                    <button class="btn btn-color margintop10 pull-left" type="submit">Kirim
+                                        Pesan</button>
                                 </p>
                             </div>
                         </div>
@@ -75,14 +69,14 @@
                     <aside class="right-sidebar">
 
                         <div class="widget">
-                            <h5 class="widgetheading">Contact information<span></span></h5>
+                            <h5 class="widgetheading">Informasi Kontak<span></span></h5>
 
                             <ul class="contact-info">
-                                <li><label>Address :</label> Tinggi sekali tower Jl.Kemacetan timur<br /> Jakarta
-                                    selatan - Indonesia</li>
-                                <li><label>Phone :</label>+62 123 456 78 / +62 123 456 79</li>
-                                <li><label>Fax : </label>+62 123 456 10 / +62 123 456 11</li>
-                                <li><label>Email : </label> info@yourdomain.com</li>
+                                <li><label>Alamat :</label> Kulwaru Kulon, Kulwaru, Wates
+                                    Kulon Progo, Yogyakarta, Indonesia</li>
+                                <li><label>Whatsapp :</label> 0822-2932-7162 (nova)</li>
+                                <li><label>Email : </label> jaitoyabyjoinova@gmail.com
+                                </li>
                             </ul>
 
                         </div>
