@@ -60,20 +60,31 @@ class ProdukController extends Controller
 
     public function show(Request $request)
     {
-        $produks = DB::table('produk')->get();
+        $produks = DB::table('produk')
+            ->selectRaw("
+                produk_title,
+                produk_description,
+                produk_image,
+                CASE WHEN produk_status = 3 THEN 'Vermak' ELSE 'no' END as vermak,
+                CASE WHEN produk_status = 2 THEN 'Jahit' ELSE 'no' END as jahit,
+                produk_information,
+                id
+            ")
+            ->get();
 
         $no = 1;
         $data = array();
         foreach ($produks as $valProduk) {
             $imageUrl = asset('storage/' . $valProduk->produk_image);
-            $status = $valProduk->produk_status;
+            $kat_vermak = $valProduk->vermak;
+            $kat_jahit = $valProduk->jahit;
             $banner = $valProduk->produk_information;
             $row = array();
             $row[] = $no;
             $row[] = $valProduk->produk_title;
             $row[] = $valProduk->produk_description;
             $row[] ='<img src="' . $imageUrl . '" alt="Slider Image" style="width: 100px; height: auto;">';
-            $row[] = ($status == 1 ? 'Aktif' : 'Non Aktif');
+            $row[] = $kat_vermak == 'no' ? $kat_jahit : $kat_vermak;
             $row[] = ($banner == 1 ? 'Ya' : 'Tidak');
             $row[] = '<a id="button_edit" class="btn btn-sm btn-warning" value="' . $valProduk->id . '" title="Edit Data"><i class="fas fa-sharp fa-solid fa-file"></i></a> <a id="button_delete" class="btn btn-sm btn-danger" value="' . $valProduk->id . '" title="Hapus Data"><i class="fas fa-solid fa-trash"></i></a>';
             $data[] = $row;

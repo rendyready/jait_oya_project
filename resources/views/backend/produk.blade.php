@@ -13,7 +13,7 @@
                         <th class="text-center">Title</th>
                         <th class="text-center">Description</th>
                         <th class="text-center">Image</th>
-                        <th class="text-center">Status</th>
+                        <th class="text-center">Kategori</th>
                         <th class="text-center">Banner</th>
                         <th class="text-center">Action</th>
                     </tr>
@@ -52,11 +52,11 @@
                                 <input type="file" class="form-control" id="image" name="image" required>
                             </div>
                             <div class="d-flex align-items-center mt-2">
-                                <label class="mb-0 me-2">Status : </label>&nbsp;&nbsp;
+                                <label class="mb-0 me-2">Kategori : </label>&nbsp;&nbsp;
                                 <input type="radio" class="status_produk" name="status_produk" value="1">&nbsp;&nbsp;
-                                <span class="mb-0">Aktif</span>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" class="status_produk" name="status_produk" value="0">&nbsp;&nbsp;
-                                <span class="mb-0">Non Aktif</span>
+                                <span class="mb-0">Vermak</span>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" class="status_produk" name="status_produk" value="2">&nbsp;&nbsp;
+                                <span class="mb-0">Jahit</span>
                             </div>
                             <div class="form-group mt-3">
                                 <input type="checkbox" id="is_product_info" name="produk_info" value="1">

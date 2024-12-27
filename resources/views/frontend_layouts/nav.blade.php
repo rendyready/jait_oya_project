@@ -72,22 +72,6 @@
 <div id="wrapper">
     <header>
         <div class="top">
-            {{-- <div class="container">
-                <div class="row">
-                    <div class="span6">
-                        <ul class="topmenu">
-                            @foreach ($menus as $key => $menu)
-                                <li>
-                                    <a href="{{ $menu['url'] }}">{{ $menu['title'] }}</a>
-                                    @if (!$loop->last)
-                                        &#47;
-                                    @endif
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div> --}}
         </div>
         <div class="container">
             <div class="row nomargin">

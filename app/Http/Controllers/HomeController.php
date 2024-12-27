@@ -44,7 +44,9 @@ class HomeController extends Controller
             ['title' => 'Produk', 'url' => route('frontend.layanan')],
         ];
 
-        $data->banner = DB::table('produk')->where('produk_information', 1)->first();
+        $data->banner = DB::table('produk')->where('produk_information', 1)->where('produk_status', 1)->first();
+        $data->jahit = DB::table('produk')->where('produk_status', 2)->get();
+        $data->vermak = DB::table('produk')->where('produk_status', 3)->get();
     
         return view('frontend/layanan', compact('data'));
     }

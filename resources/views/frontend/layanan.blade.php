@@ -1,4 +1,7 @@
 @include('frontend_layouts.header')
+{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> --}}
+
+
 <style>
     /* Layout utama */
     .portfolio-container {
@@ -37,6 +40,17 @@
     .description li {
         margin-bottom: 5px;
         font-size: 1rem;
+        color: #555;
+    }
+
+    #modalImage {
+        max-height: 80vh;
+        /* Membatasi tinggi gambar agar sesuai layar */
+        object-fit: contain;
+    }
+
+    #modalCaption {
+        font-size: 1.1rem;
         color: #555;
     }
 </style>
@@ -114,170 +128,59 @@
                             <ul id="thumbs" class="grid cs-style-3 portfolio">
 
                                 <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
-                                    <div class="item">
-                                        <figure>
-                                            <div><img src="img/dummies/works/1.jpg" alt=""></div>
-                                            <figcaption>
-                                                <h3>Portfolio name</h3>
-                                                <p>
-                                                    <a href="img/dummies/works/big.png"
-                                                        data-pretty="prettyPhoto[gallery1]"
-                                                        title="Portfolio caption here"><i
-                                                            class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                                                    <a href="#"><i
-                                                            class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                                                </p>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                </li>
+                                @foreach ($data->vermak as $vermak)
+                                    <li class="item-thumbs span3 design" data-id="id-1" data-type="web">
+                                        <div class="item">
+                                            <figure>
+                                                <div><img src="{{ asset('storage/' . $vermak->produk_image) }}"
+                                                        alt=""></div>
+                                                <figcaption>
+                                                    <h3>{{ $vermak->produk_title }}</h3>
+                                                    <p>
+                                                        {{-- <a href="{{ asset('storage/' . $vermak->produk_image) }}"
+                                                            data-pretty="prettyPhoto[gallery1]" title="Detail Foto"><i
+                                                                class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i>
+                                                            </a> --}}
+                                                        <!-- Tautan -->
+                                                        <a href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#imageModal"
+                                                            onclick="openModal('{{ asset('storage/' . $vermak->produk_image) }}', '{{ $vermak->produk_title }}')">
+                                                            <i
+                                                                class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i>
+                                                        </a>
+                                                        <a href="#"><i
+                                                                class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
+                                                    </p>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </li>
+                                @endforeach
                                 <!-- End Item Project -->
 
                                 <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 design" data-id="id-1" data-type="icon">
-                                    <div class="item">
-                                        <figure>
-                                            <div><img src="img/dummies/works/2.jpg" alt=""></div>
-                                            <figcaption>
-                                                <h3>Portfolio name</h3>
-                                                <p>
-                                                    <a href="img/dummies/works/big.png"
-                                                        data-pretty="prettyPhoto[gallery1]"
-                                                        title="Portfolio caption here"><i
-                                                            class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                                                    <a href="#"><i
-                                                            class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                                                </p>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                </li>
-                                <!-- End Item Project -->
-
-                                <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 photography" data-id="id-2" data-type="graphic">
-                                    <div class="item">
-                                        <figure>
-                                            <div><img src="img/dummies/works/3.jpg" alt=""></div>
-                                            <figcaption>
-                                                <h3>Portfolio name</h3>
-                                                <p>
-                                                    <a href="img/dummies/works/big.png"
-                                                        data-pretty="prettyPhoto[gallery1]"
-                                                        title="Portfolio caption here"><i
-                                                            class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                                                    <a href="#"><i
-                                                            class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                                                </p>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                </li>
-                                <!-- End Item Project -->
-
-                                <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
-                                    <div class="item">
-                                        <figure>
-                                            <div><img src="img/dummies/works/4.jpg" alt=""></div>
-                                            <figcaption>
-                                                <h3>Portfolio name</h3>
-                                                <p>
-                                                    <a href="img/dummies/works/big.png"
-                                                        data-pretty="prettyPhoto[gallery1]"
-                                                        title="Portfolio caption here"><i
-                                                            class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                                                    <a href="#"><i
-                                                            class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                                                </p>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                </li>
-                                <!-- End Item Project -->
-
-                                <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 photography" data-id="id-4" data-type="web">
-                                    <div class="item">
-                                        <figure>
-                                            <div><img src="img/dummies/works/5.jpg" alt=""></div>
-                                            <figcaption>
-                                                <h3>Portfolio name</h3>
-                                                <p>
-                                                    <a href="img/dummies/works/big.png"
-                                                        data-pretty="prettyPhoto[gallery1]"
-                                                        title="Portfolio caption here"><i
-                                                            class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                                                    <a href="#"><i
-                                                            class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                                                </p>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                </li>
-                                <!-- End Item Project -->
-
-                                <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 photography" data-id="id-5" data-type="icon">
-                                    <div class="item">
-                                        <figure>
-                                            <div><img src="img/dummies/works/6.jpg" alt=""></div>
-                                            <figcaption>
-                                                <h3>Portfolio name</h3>
-                                                <p>
-                                                    <a href="img/dummies/works/big.png"
-                                                        data-pretty="prettyPhoto[gallery1]"
-                                                        title="Portfolio caption here"><i
-                                                            class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                                                    <a href="#"><i
-                                                            class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                                                </p>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                </li>
-                                <!-- End Item Project -->
-
-                                <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
-                                    <div class="item">
-                                        <figure>
-                                            <div><img src="img/dummies/works/7.jpg" alt=""></div>
-                                            <figcaption>
-                                                <h3>Portfolio name</h3>
-                                                <p>
-                                                    <a href="img/dummies/works/big.png"
-                                                        data-pretty="prettyPhoto[gallery1]"
-                                                        title="Portfolio caption here"><i
-                                                            class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                                                    <a href="#"><i
-                                                            class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                                                </p>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                </li>
-                                <!-- End Item Project -->
-
-                                <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 design" data-id="id-0" data-type="graphic">
-                                    <div class="item">
-                                        <figure>
-                                            <div><img src="img/dummies/works/8.jpg" alt=""></div>
-                                            <figcaption>
-                                                <h3>Portfolio name</h3>
-                                                <p>
-                                                    <a href="img/dummies/works/big.png"
-                                                        data-pretty="prettyPhoto[gallery1]"
-                                                        title="Portfolio caption here"><i
-                                                            class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                                                    <a href="#"><i
-                                                            class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                                                </p>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                </li>
+                                @foreach ($data->jahit as $jahit)
+                                    <li class="item-thumbs span3 design" data-id="id-1" data-type="icon">
+                                        <div class="item">
+                                            <figure>
+                                                <div><img src="{{ asset('storage/' . $jahit->produk_image) }}"
+                                                        alt=""></div>
+                                                <figcaption>
+                                                    <h3>{{ $jahit->produk_title }}</h3>
+                                                    <p>
+                                                        <a href="{{ asset('storage/' . $jahit->produk_image) }}"
+                                                            data-pretty="prettyPhoto[gallery1]" title="Detail Foto"><i
+                                                                class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i>
+                                                        </a>
+                                                        <a href="#"><i
+                                                                class="icon-file icon-circled icon-bglight icon-2x active"></i>
+                                                        </a>
+                                                    </p>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </li>
+                                @endforeach
                                 <!-- End Item Project -->
 
                             </ul>
@@ -289,5 +192,28 @@
         </div>
     </section>
 
+    <!-- Modal -->
+    {{-- <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Detail Gambar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" alt="" class="img-fluid">
+                    <p id="modalCaption" class="mt-3"></p>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
     @include('frontend_layouts.footer')
 </div>
+
+<script>
+    function openModal(imageUrl, caption) {
+        document.getElementById('modalImage').src = imageUrl;
+        document.getElementById('modalCaption').innerText = caption;
+    }
+</script>
