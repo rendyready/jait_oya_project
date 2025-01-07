@@ -1,0 +1,8 @@
+build:
+    commands:
+        - composer install --no-dev --optimize-autoloader
+        - npm install
+        - npm run production
+
+run:
+    command: php artisan serve --host=0.0.0.0 --port=$PORT
